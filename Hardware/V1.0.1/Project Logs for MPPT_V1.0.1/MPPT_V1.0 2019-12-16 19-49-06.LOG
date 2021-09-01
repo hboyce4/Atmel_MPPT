@@ -1,0 +1,18 @@
+Removed Pin From Net: NetName=V_PV Pin=R8-2
+Removed Pin From Net: NetName=Charger_PWM Pin=U1-43
+Removed Pin From Net: NetName=Charger_FCCM Pin=U1-44
+Added Component: Designator=R29(RESC1608N)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "17-Jul-2002"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionNote"; Value = "Re-released for DXP Platform."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageDescription"; Value = "Axial Device, Thru-Hole; 2 Leads; 0.3 in Pin Spacing"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageReference"; Value = "AXIAL-0.3"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Published"; Value = "8-Jun-2000"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "300K"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=V_PV Pin=R29-2
+Added Pin To Net: NetName=Charger_FCCM Pin=U1-43
+Added Pin To Net: NetName=Charger_PWM Pin=U1-44
+Added Pin To Net: NetName=NetR8_2 Pin=R8-2
+Added Pin To Net: NetName=NetR8_2 Pin=R29-1
+Added Net: Name=NetR8_2
