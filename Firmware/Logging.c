@@ -9,9 +9,9 @@
 
 void Logging_Monitor_Values(volatile Analog_Data_t* Analog_Data, volatile Logging_Data_t* Logging_Data){
 	
-	if (Analog_Data->PV_P > Logging_Data->Peak_PV_P){
+	if ((int16_t)((Analog_Data->PV_P_avg)>>SHIFT_FOR_AVG) > Logging_Data->Peak_PV_P){
 		
-		Logging_Data->Peak_PV_P = Analog_Data->PV_P;
+		Logging_Data->Peak_PV_P = (int16_t)((Analog_Data->PV_P_avg)>>SHIFT_FOR_AVG);
 		Logging_Data->New_Peak_PV_P = true;
 	}
 	

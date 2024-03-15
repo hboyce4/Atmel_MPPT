@@ -20,12 +20,12 @@
 #define BUTTON_PRESS_INCREMENT 1
 #define DUTY_CYCLE_INITIAL_VALUE 5
 #define MPPT_CHASE_DIVIDER 4 /* Max = 255. Value by which the analog refresh rate (76Hz) is divided to obtain the MPPT tracking or duty cycle refresh rate (19Hz) */ 
-#define SCAN_DIVIDER 22800
-#define PRE_SCAN_DELAY 5
-#define POST_SCAN_DELAY 5
+#define SCAN_DIVIDER 45600
+#define PRE_SCAN_DELAY 10
+#define POST_SCAN_DELAY 10
 
 #define MIN_RUN_POWER 25 /* milliwatts */
-#define OPEN_CIRCUIT_VOLTAGE_TURN_ON_THRESHOLD 21000 /* millivolts. In cold weather, 21000. Warm weather 20000. */
+#define OPEN_CIRCUIT_VOLTAGE_TURN_ON_THRESHOLD 18200 /* millivolts. In cold weather, 21000. Warm weather 20000. */
 
 
 typedef struct {

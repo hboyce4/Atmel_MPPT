@@ -93,7 +93,7 @@ void Display_P_I_V_Conv_State(volatile Analog_Data_t* Analog_Data, int16_t Peak_
 	glcd_WriteString(&x_pos, &y_pos,String_Buffer);
 	
 	x_pos = 64;
-	itoa(Analog_Data->PV_P, String_Buffer, DECIMAL);
+	itoa((int)((Analog_Data->PV_P_avg)>>SHIFT_FOR_AVG), String_Buffer, DECIMAL);
 	glcd_WriteString(&x_pos, &y_pos,String_Buffer);
 	glcd_WriteString_P(&x_pos, &y_pos,PSTR("/"));
 	itoa(Peak_PV_P, String_Buffer, DECIMAL);

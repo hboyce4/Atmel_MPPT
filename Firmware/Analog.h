@@ -12,6 +12,7 @@
 #include <stdbool.h>
 #include <stdint.h>
 #include <avr/interrupt.h>
+#include <avr/io.h>
 
 #include "Buttons_and_LEDs.h"
 
@@ -26,7 +27,7 @@ ADC7: Batt_I
 Formules de conversion:
 
 PV millivolts = ADC Count * 28
-PV tenths of milliamp = ADC Count * 5
+PV milliamp = ADC Count * 1
 Battery millivolts = ADC Count * 16
 Battery milliamps = (ADC Count - 260) * 4
 
@@ -34,11 +35,13 @@ Battery milliamps = (ADC Count - 260) * 4
 
 /* Gains and offsets for obtaining real voltages and currents*/
 #define PV_V_GAIN 28
-#define PV_I_GAIN 5
+#define PV_I_GAIN 1
 #define PV_I_OFFSET 9
 #define BATT_V_GAIN 16
-#define BATT_I_OFFSET 257
-#define BATT_I_GAIN -4
+#define BATT_I_OFFSET 391
+#define BATT_I_GAIN -5
+#define SHIFT_FOR_AVG 16 /* Left shift a 16 bit value to 32 bits for AVG*/
+#define FILTERING_CONSTANT 5415 /* Equal to (2^SHIFT_FOR_AVG)*T*w , where T is the sampling petiod (1/79Hz) and w is the cutoff req of the filter in rad/s (~6.2832 rad/s)  */
 
 
 /* Values used for averaging */
@@ -77,6 +80,7 @@ typedef struct  {
 	int16_t PV_V;		/* Solar panel voltage in mV */
 	int16_t PV_I;		/* Solar panel current in 100s of uA (or tenths of mA)*/
 	int16_t PV_P;		/* Solar panel power, in mW */
+	int32_t PV_P_avg;	/* Solar panel average power, in mW, multiplied by 2^SHIFT_FOR_AVG */
 	int16_t Batt_V;	/* Battery voltage, in mV */
 	int16_t  Batt_I;	/* Battery current, in mA */
 	int16_t  Batt_P;	/* Battery power, in mW */
@@ -104,6 +108,7 @@ extern volatile Battery_Data_t Battery_Voltage_Limits;
 
 void ADC_Init(void);
 void ADC_Get_Analog_Data(volatile Analog_Data_t*, volatile Battery_Data_t*);
+void Analog_Calc_Avg(volatile Analog_Data_t*);
 
 
 #endif /* ANALOG_H_ */

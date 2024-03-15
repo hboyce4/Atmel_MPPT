@@ -292,8 +292,8 @@ void Battery_Set_Limits(uint8_t Battery_Type, volatile Battery_Data_t* Battery_V
 	
 	if(Battery_Type == 3){ /*3S Lithium-Ion Mode*/
 		
-			Battery_Voltage_Limits->Batt_OV_Cut_In = 12600; // mV. Voltage above which battery is in overvoltage (charging should stop)
-			Battery_Voltage_Limits->Batt_OV_Cut_Out = 12450; // mV. Voltage below which battery is out of overvoltage (charging can resume)
+			Battery_Voltage_Limits->Batt_OV_Cut_In = 12000; // mV. Voltage above which battery is in overvoltage (charging should stop)
+			Battery_Voltage_Limits->Batt_OV_Cut_Out = 11800; // mV. Voltage below which battery is out of overvoltage (charging can resume)
 			Battery_Voltage_Limits->Batt_UV_Cut_In = 9000; // mV. Voltage below which battery is in undervoltage (discharge should stop)
 			Battery_Voltage_Limits->Batt_UV_Cut_Out = 9450; // mV. Voltage above which battery is out of undervoltage (discharge can resume)
 			
@@ -301,8 +301,8 @@ void Battery_Set_Limits(uint8_t Battery_Type, volatile Battery_Data_t* Battery_V
 	
 	else if (Battery_Type == 2){ /*2S Lithium-Ion Mode*/
 		
-		Battery_Voltage_Limits->Batt_OV_Cut_In = 8400; // mV
-		Battery_Voltage_Limits->Batt_OV_Cut_Out = 8300; // mV
+		Battery_Voltage_Limits->Batt_OV_Cut_In = 8000; // mV
+		Battery_Voltage_Limits->Batt_OV_Cut_Out = 7900; // mV
 		Battery_Voltage_Limits->Batt_UV_Cut_In = 6000; // mV
 		Battery_Voltage_Limits->Batt_UV_Cut_Out = 6300; // mV
 		
@@ -310,8 +310,8 @@ void Battery_Set_Limits(uint8_t Battery_Type, volatile Battery_Data_t* Battery_V
 	
 	else if (Battery_Type ==1){ /* 12V Lead-Acid Mode */
 		
-		Battery_Voltage_Limits->Batt_OV_Cut_In = 14400; // mV
-		Battery_Voltage_Limits->Batt_OV_Cut_Out = 14000; // mV
+		Battery_Voltage_Limits->Batt_OV_Cut_In = 13800; // mV
+		Battery_Voltage_Limits->Batt_OV_Cut_Out = 13500; // mV
 		Battery_Voltage_Limits->Batt_UV_Cut_In = 10800;	// mV
 		Battery_Voltage_Limits->Batt_UV_Cut_Out = 11000; // mV
 		
@@ -319,8 +319,8 @@ void Battery_Set_Limits(uint8_t Battery_Type, volatile Battery_Data_t* Battery_V
 	
 	else {	/* 6V Lead-Acid Mode */
 		
-		Battery_Voltage_Limits->Batt_OV_Cut_In = 7200; // mV
-		Battery_Voltage_Limits->Batt_OV_Cut_Out = 7000; // mV
+		Battery_Voltage_Limits->Batt_OV_Cut_In = 6900; // mV
+		Battery_Voltage_Limits->Batt_OV_Cut_Out = 6800; // mV
 		Battery_Voltage_Limits->Batt_UV_Cut_In = 5400;	// mV
 		Battery_Voltage_Limits->Batt_UV_Cut_Out = 5500; // mV
 		

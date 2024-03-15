@@ -69,7 +69,9 @@ int main(void)
 
 ISR(TIMER2_OVF_vect, ISR_NOBLOCK){	/* Nested interrupts. Runs at 76.2939 Hz */
 	
-	ADC_Get_Analog_Data(&Current_Analog_Data, &Battery_Voltage_Limits); /* Refresh analog data*/	
+	ADC_Get_Analog_Data(&Current_Analog_Data, &Battery_Voltage_Limits); /* Refresh analog data*/
+	
+	Analog_Calc_Avg(&Current_Analog_Data);	
 	
 	Logging_Monitor_Values(&Current_Analog_Data, &Current_Logging_Data);
 	

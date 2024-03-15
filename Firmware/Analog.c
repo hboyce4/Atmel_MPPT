@@ -26,11 +26,11 @@ void ADC_Get_Analog_Data(volatile Analog_Data_t* Analog_Data, volatile Battery_D
 	
 	
 	Analog_Data->PV_V = ADC_Data.Raw_PV_V * PV_V_GAIN; /* PV_V in millivolts*/
-	Analog_Data->PV_I = (ADC_Data.Raw_PV_I - PV_I_OFFSET) * PV_I_GAIN; /* PV_I in tenths of milliamp */
+	Analog_Data->PV_I = (ADC_Data.Raw_PV_I - PV_I_OFFSET) * PV_I_GAIN; /* PV_I in milliamps */
 	Analog_Data->Batt_V = ADC_Data.Raw_Batt_V * BATT_V_GAIN; /* Batt_V in millivolts*/	
 	Analog_Data->Batt_I = (ADC_Data.Raw_Batt_I - BATT_I_OFFSET) * BATT_I_GAIN; /*Batt_I in milliamps*/
 
-	Analog_Data->PV_P = (int16_t)(((int32_t)Analog_Data->PV_V * (int32_t)Analog_Data->PV_I)/10000); /* PV_P in milliwatts*/
+	Analog_Data->PV_P = (int16_t)(((int32_t)Analog_Data->PV_V * (int32_t)Analog_Data->PV_I)/1000); /* PV_P in milliwatts*/
 	
 	Analog_Data->Batt_P = (int16_t)(((int32_t)Analog_Data->Batt_V * (int32_t)Analog_Data->Batt_I)/1000); /* Batt_P in milliwatts*/
 	
@@ -51,6 +51,12 @@ void ADC_Get_Analog_Data(volatile Analog_Data_t* Analog_Data, volatile Battery_D
 		
 		Analog_Data->Batt_UV = false;
 	}
+	
+}
+
+void Analog_Calc_Avg(volatile Analog_Data_t* Analog_Data){
+	
+	Analog_Data->PV_P_avg = Analog_Data->PV_P_avg + (Analog_Data->PV_P - ((Analog_Data->PV_P_avg)>>SHIFT_FOR_AVG))*FILTERING_CONSTANT;
 	
 }
 
