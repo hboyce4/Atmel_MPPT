@@ -900,23 +900,23 @@ END GROUP
  .debug_frame   0x000002d4      0x17c SG12232A_Driver_1_0.o
  .debug_frame   0x00000450      0x110 System.o
 
-.debug_str      0x00000000      0xc09
+.debug_str      0x00000000      0xc08
  *(.debug_str)
  .debug_str     0x00000000      0x252 E:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.7.374/gcc/dev/atmega644a/avr5/crtatmega644a.o
- .debug_str     0x00000252      0x2ed Analog.o
-                                0x35a (size before relaxing)
- .debug_str     0x0000053f       0xfc Buttons_and_LEDs.o
-                                0x27a (size before relaxing)
- .debug_str     0x0000063b      0x1e1 Display.o
-                                0x3e5 (size before relaxing)
- .debug_str     0x0000081c       0x89 Logging.o
-                                0x27f (size before relaxing)
- .debug_str     0x000008a5      0x14d main.o
-                                0x5f5 (size before relaxing)
- .debug_str     0x000009f2       0xd7 SG12232A_Driver_1_0.o
-                                0x2ff (size before relaxing)
- .debug_str     0x00000ac9      0x140 System.o
-                                0x4f6 (size before relaxing)
+ .debug_str     0x00000252      0x2ec Analog.o
+                                0x359 (size before relaxing)
+ .debug_str     0x0000053e       0xfc Buttons_and_LEDs.o
+                                0x279 (size before relaxing)
+ .debug_str     0x0000063a      0x1e1 Display.o
+                                0x3e4 (size before relaxing)
+ .debug_str     0x0000081b       0x89 Logging.o
+                                0x27e (size before relaxing)
+ .debug_str     0x000008a4      0x14d main.o
+                                0x5f4 (size before relaxing)
+ .debug_str     0x000009f1       0xd7 SG12232A_Driver_1_0.o
+                                0x2fe (size before relaxing)
+ .debug_str     0x00000ac8      0x140 System.o
+                                0x4f5 (size before relaxing)
 
 .debug_loc      0x00000000     0x165d
  *(.debug_loc)

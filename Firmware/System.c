@@ -292,8 +292,8 @@ void Battery_Set_Limits(uint8_t Battery_Type, volatile Battery_Data_t* Battery_V
 	
 	if(Battery_Type == 3){ /*3S Lithium-Ion Mode*/
 		
-			Battery_Voltage_Limits->Batt_OV_Cut_In = 12000; // mV. Voltage above which battery is in overvoltage (charging should stop)
-			Battery_Voltage_Limits->Batt_OV_Cut_Out = 11800; // mV. Voltage below which battery is out of overvoltage (charging can resume)
+			Battery_Voltage_Limits->Batt_OV_Cut_In = 12300; // mV. Voltage above which battery is in overvoltage (charging should stop)
+			Battery_Voltage_Limits->Batt_OV_Cut_Out = 12000; // mV. Voltage below which battery is out of overvoltage (charging can resume)
 			Battery_Voltage_Limits->Batt_UV_Cut_In = 9000; // mV. Voltage below which battery is in undervoltage (discharge should stop)
 			Battery_Voltage_Limits->Batt_UV_Cut_Out = 9450; // mV. Voltage above which battery is out of undervoltage (discharge can resume)
 			
